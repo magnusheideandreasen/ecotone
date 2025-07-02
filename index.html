@@ -5,44 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ecotone Video Portfolio</title>
   <style>
+    @font-face {
+      font-family: 'Goudy Old Style';
+      src: local('Goudy Old Style'), local('GoudyOldStyle'),
+           url('https://fonts.cdnfonts.com/s/11752/GoudyOldStyle.woff') format('woff');
+    }
     body {
+      background-color: #000;
+      color: #fff;
       font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      background: #f0f8ff;
-      color: #333;
+      margin: 0;
+      padding: 40px 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     h1 {
-      text-align: center;
+      font-family: 'Goudy Old Style', serif;
+      font-size: 4rem;
+      margin: 0;
+    }
+    .motto {
+      font-style: italic;
+      font-size: 1.5rem;
+      margin-top: 8px;
       margin-bottom: 40px;
+      color: #ccc;
     }
     video {
-      width: 100%;
+      max-width: 90vw;
       height: auto;
-      border: 2px solid #333;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #aaa;
-      margin-bottom: 20px;
-    }
-    .description {
-      font-size: 1.1em;
-      margin-bottom: 40px;
-      text-align: center;
+      border: 2px solid #fff;
+      border-radius: 6px;
+      box-shadow: 0 0 15px #333;
+      outline: none;
     }
   </style>
 </head>
 <body>
-  <h1>Ecotone Video Portfolio</h1>
+  <h1>Ecotone</h1>
+  <div class="motto">Visuals for visionaries</div>
 
   <video controls>
     <source src="sample-video.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
-
-  <div class="description">
-    <p>This is a sample video. Replace <code>sample-video.mp4</code> with your own video file or link.</p>
-  </div>
-
 </body>
 </html>
