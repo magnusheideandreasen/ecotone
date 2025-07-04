@@ -61,6 +61,128 @@
   </style>
 </head>
 <body>
+  <header>
+  <div class="logo-container">[ecotone]</div>
+  <div class="tagline">visuals for visionaries</div>
+
+  <nav>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <ul class="menu">
+      <li><a href="index.html">home</a></li>
+      <li><a href="contact.html">contact</a></li>
+      <li><a href="about.html">about us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: black;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+    box-sizing: border-box;
+  }
+
+  .logo-container {
+    font-family: 'Goudy Bookletter 1911', serif;
+    font-size: 1.8em;
+    color: white;
+    user-select: none;
+    text-transform: lowercase;
+  }
+
+  .tagline {
+    font-family: 'Goudy Bookletter 1911', serif;
+    color: white;
+    font-size: 1em;
+    margin-left: 20px;
+    text-transform: lowercase;
+    flex-grow: 1;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  /* Hide the checkbox */
+  #menu-toggle {
+    display: none;
+  }
+
+  .menu-icon {
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    display: none; /* hidden by default */
+  }
+
+  ul.menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul.menu li {
+    margin-left: 20px;
+  }
+
+  ul.menu li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Goudy Bookletter 1911', serif;
+    font-size: 1em;
+    text-transform: lowercase;
+  }
+
+  ul.menu li a:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsive menu for small screens */
+  @media (max-width: 600px) {
+    .menu-icon {
+      display: block;
+    }
+
+    ul.menu {
+      display: none;
+      flex-direction: column;
+      background: black;
+      position: absolute;
+      right: 0;
+      top: 40px;
+      width: 150px;
+      border: 1px solid white;
+      border-radius: 4px;
+    }
+
+    ul.menu li {
+      margin: 10px 0;
+      text-align: right;
+      margin-left: 0;
+      padding-right: 15px;
+    }
+
+    #menu-toggle:checked + .menu-icon + ul.menu {
+      display: flex;
+    }
+  }
+
+  /* Add spacing so page content is not hidden behind fixed header */
+  body {
+    padding-top: 60px; /* adjust if needed */
+  }
+</style>
+
 
   <div class="logo-container">[ecotone]</div>
 
