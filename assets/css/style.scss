@@ -1,162 +1,147 @@
----
----
-
-@import "{{ site.theme }}";
-
-body {
-  background-color: #000;
-  color: #fff;
-  font-family: Goudy Old Style, serif;
+/* General reset */
+* {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+body {
+  background-color: black;
+  color: white;
+  font-family: "Goudy Old Style", serif;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  position: relative;
+/* Centered logo with animation */
+.logo {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 3rem;
+  animation: logoSplit 2s ease-in-out;
+  letter-spacing: 0.1rem;
+  white-space: nowrap;
+}
+
+@keyframes logoSplit {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.5);
+  }
+  60% {
+    opacity: 1;
+    transform: scaleX(1.05);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* Tagline */
+.tagline {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* Burger Menu (Two Waves Style) */
+.burger {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  cursor: pointer;
   z-index: 1000;
 }
 
-.logo {
-  font-family: Goudy Old Style, serif;
-  font-size: 2rem;
-  font-weight: normal;
-  text-transform: lowercase;
-  color: white;
-  animation: fadeIn 2s ease-in-out 0.5s 1 forwards;
-  opacity: 0;
+.burger div {
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  background: white;
+  border-radius: 50px;
+  animation: wave 2s infinite ease-in-out;
 }
 
-.tagline {
-  font-size: 1.2rem;
-  text-transform: lowercase;
-  margin: 1rem 0;
-  text-align: center;
-  color: #aaa;
+.burger div:nth-child(1) {
+  top: 10px;
+  animation-delay: 0s;
 }
 
-/* Animation for logo on page load */
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: none;
+.burger div:nth-child(2) {
+  top: 24px;
+  animation-delay: 0.2s;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.6);
   }
 }
 
-/* --- Burger Menu --- */
-
-.burger {
-  width: 25px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 20px;
-}
-
-.burger div {
-  height: 3px;
-  background-color: white;
-  transition: all 0.3s ease;
-}
-
-.nav {
+/* Menu nav */
+nav.nav {
   display: none;
   flex-direction: column;
   align-items: center;
-  background: #111;
-  position: absolute;
-  top: 70px;
-  right: 0;
-  width: 100%;
-  z-index: 999;
+  margin-top: 1rem;
 }
 
-.nav.active {
+nav.nav.active {
   display: flex;
 }
 
-.nav a {
-  padding: 1rem;
-  width: 100%;
-  text-align: center;
-  border-top: 1px solid #333;
+nav.nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0.5rem;
+  font-size: 1.2rem;
 }
 
-/* --- Main Button --- */
-
+/* Reach Out Button */
 .reach-out-btn {
+  display: inline-block;
   background: none;
-  border: 2px solid white;
-  padding: 1rem 2rem;
-  font-size: 1rem;
   color: white;
-  margin: 2rem auto;
-  display: block;
+  padding: 0.75rem 1.5rem;
+  margin: 2rem auto 1rem;
+  font-size: 1rem;
+  text-transform: lowercase;
+  text-align: center;
+  text-decoration: underline;
   cursor: pointer;
+  border: none;
 }
 
 footer {
-  margin-top: 4rem;
-  padding: 2rem;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #888;
-}
-
-/* Contact Page Styling */
-
-.contact-info {
   text-align: center;
   margin-top: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
 }
 
-.contact-info p {
-  font-size: 1rem;
-  margin: 0.5rem 0;
-}
-
-.contact-info a {
-  font-weight: bold;
-  display: inline-block;
-  margin: 0.25rem;
+/* Contact info */
+.contact-info {
+  margin-top: 2rem;
+  font-size: 1.1rem;
 }
 
 .contact-phone {
-  font-size: 1.4rem;
-  color: white;
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-/* Media Queries for Mobile */
+.contact-phone span {
+  color: white;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
 
-@media (max-width: 768px) {
-  .reach-out-btn {
-    width: 80%;
-  }
-
-  .tagline {
-    font-size: 1rem;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-  }
-
-  .contact-phone {
-    font-size: 1.2rem;
-  }
+a {
+  color: white;
 }
