@@ -119,6 +119,17 @@
       margin: 10px 0;
     }
 
+    /* Make phone number white and no underline */
+    a.phone-link {
+      color: white;
+      text-decoration: none;
+      cursor: default;
+    }
+
+    a.phone-link:hover {
+      text-decoration: none; /* no underline on hover */
+    }
+
     .follow-us {
       margin-top: 40px;
       font-size: 1em;
@@ -185,7 +196,7 @@
     <p>we look forward to hearing from you.</p>
 
     <div class="contact-info">
-      📞 +45 27 59 13 84
+      📞 <a href="tel:+4527591384" class="phone-link">+45 27 59 13 84</a>
     </div>
 
     <div class="contact-info">
@@ -195,8 +206,8 @@
     <div class="follow-us">
       follow us
       <div class="social-links">
-        <a href="https://linkedin.com/ecotone" target="_blank">linkedin.com/ecotone</a>
-        <a href="https://instagram.com/ecotone_film" target="_blank">instagram.com/ecotone_film</a>
+        <a href="https://linkedin.com/ecotone" target="_blank" rel="noopener noreferrer">linkedin.com/ecotone</a>
+        <a href="https://instagram.com/ecotone_film" target="_blank" rel="noopener noreferrer">instagram.com/ecotone_film</a>
       </div>
     </div>
 
