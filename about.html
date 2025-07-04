@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Us - ecotone</title>
+  <title>about us - ecotone</title>
   <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -11,60 +11,128 @@
       background-color: black;
       color: white;
       font-family: 'Goudy Bookletter 1911', serif;
-      padding: 40px 20px;
+      padding: 20px;
+      padding-top: 60px;
       text-align: center;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      box-sizing: border-box;
     }
 
-    /* Logo persistent at top left */
-    .logo-container {
+    header {
       position: fixed;
-      top: 20px;
-      left: 20px;
-      font-size: 2em;
+      top: 0;
+      width: 100%;
+      background: black;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 999;
+    }
+
+    .logo-container {
+      font-family: 'Goudy Bookletter 1911', serif;
+      font-size: 1.8em;
       color: white;
       user-select: none;
+      text-transform: lowercase;
     }
 
-    a {
+    .tagline {
+      font-family: 'Goudy Bookletter 1911', serif;
       color: white;
-      text-decoration: none;
+      font-size: 1em;
+      margin-left: 20px;
+      text-transform: lowercase;
+      flex-grow: 1;
+      text-align: left;
     }
-    a:hover {
+
+    nav {
+      position: relative;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    .menu-icon {
+      font-size: 2em;
+      color: white;
+      cursor: pointer;
+      display: none;
+    }
+
+    ul.menu {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul.menu li {
+      margin-left: 20px;
+    }
+
+    ul.menu li a {
+      text-decoration: none;
+      color: white;
+      font-family: 'Goudy Bookletter 1911', serif;
+      font-size: 1em;
+      text-transform: lowercase;
+    }
+
+    ul.menu li a:hover {
       text-decoration: underline;
     }
 
-    h1 {
-      font-weight: normal;
-      text-transform: lowercase;
-      margin-bottom: 20px;
+    @media (max-width: 600px) {
+      .menu-icon {
+        display: block;
+      }
+
+      ul.menu {
+        display: none;
+        flex-direction: column;
+        background: black;
+        position: absolute;
+        right: 0;
+        top: 40px;
+        width: 150px;
+        border: 1px solid white;
+        border-radius: 4px;
+      }
+
+      ul.menu li {
+        margin: 10px 0;
+        text-align: right;
+        margin-left: 0;
+        padding-right: 15px;
+      }
+
+      #menu-toggle:checked + .menu-icon + ul.menu {
+        display: flex;
+      }
+    }
+
+    main {
+      margin-top: 50px;
     }
 
     p {
-      font-size: 1.3em;
+      font-size: 1.4em;
       max-width: 600px;
-      margin: 0 auto 40px;
-      line-height: 1.6em;
-    }
-
-    .nav-links {
-      margin-top: auto;
-    }
-    .nav-links a {
-      margin: 0 15px;
-      font-size: 1.1em;
+      margin: 0 auto;
       text-transform: lowercase;
+      line-height: 1.6em;
     }
   </style>
 </head>
 <body>
-  <header>
+
+<header>
   <div class="logo-container">[ecotone]</div>
   <div class="tagline">visuals for visionaries</div>
-
   <nav>
     <input type="checkbox" id="menu-toggle" />
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
@@ -76,123 +144,9 @@
   </nav>
 </header>
 
-<style>
-  header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: black;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 999;
-    box-sizing: border-box;
-  }
-
-  .logo-container {
-    font-family: 'Goudy Bookletter 1911', serif;
-    font-size: 1.8em;
-    color: white;
-    user-select: none;
-    text-transform: lowercase;
-  }
-
-  .tagline {
-    font-family: 'Goudy Bookletter 1911', serif;
-    color: white;
-    font-size: 1em;
-    margin-left: 20px;
-    text-transform: lowercase;
-    flex-grow: 1;
-  }
-
-  nav {
-    position: relative;
-  }
-
-  /* Hide the checkbox */
-  #menu-toggle {
-    display: none;
-  }
-
-  .menu-icon {
-    font-size: 2em;
-    color: white;
-    cursor: pointer;
-    user-select: none;
-    display: none; /* hidden by default */
-  }
-
-  ul.menu {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-
-  ul.menu li {
-    margin-left: 20px;
-  }
-
-  ul.menu li a {
-    text-decoration: none;
-    color: white;
-    font-family: 'Goudy Bookletter 1911', serif;
-    font-size: 1em;
-    text-transform: lowercase;
-  }
-
-  ul.menu li a:hover {
-    text-decoration: underline;
-  }
-
-  /* Responsive menu for small screens */
-  @media (max-width: 600px) {
-    .menu-icon {
-      display: block;
-    }
-
-    ul.menu {
-      display: none;
-      flex-direction: column;
-      background: black;
-      position: absolute;
-      right: 0;
-      top: 40px;
-      width: 150px;
-      border: 1px solid white;
-      border-radius: 4px;
-    }
-
-    ul.menu li {
-      margin: 10px 0;
-      text-align: right;
-      margin-left: 0;
-      padding-right: 15px;
-    }
-
-    #menu-toggle:checked + .menu-icon + ul.menu {
-      display: flex;
-    }
-  }
-
-  /* Add spacing so page content is not hidden behind fixed header */
-  body {
-    padding-top: 60px; /* adjust if needed */
-  }
-</style>
-
-
-  <div class="logo-container">[ecotone]</div>
-
-  <h1>about us</h1>
-  <p>we support forward-thinking researchers and blue-green NGOs in making their ideas and actions impactful.</p>
-
-  <div class="nav-links">
-    <a href="index.html">home</a> | 
-    <a href="contact.html">contact</a>
-  </div>
+<main>
+  <p>we support forward-thinking researchers and blue-green ngos in making their ideas and actions impactful</p>
+</main>
 
 </body>
 </html>
