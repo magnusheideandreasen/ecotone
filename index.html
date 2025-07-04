@@ -3,12 +3,25 @@ layout: default
 title: home
 ---
 
-<section style="text-align: center; margin-top: 4rem;">
+<header>
+  <div class="logo">[ecotone]</div>
+  <div class="burger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+  </div>
+  <nav class="nav" id="menu">
+    <a href="/">home</a>
+    <a href="/about.html">about us</a>
+    <a href="/contact.html">contact</a>
+  </nav>
+</header>
+
+<main style="text-align: center; margin-top: 3rem;">
   <p class="tagline">visuals for visionaries</p>
 
-  <video autoplay loop muted playsinline style="max-width: 100%; height: auto; margin-top: 2rem;">
-    <source src="your-video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
+  <video autoplay loop muted playsinline style="max-width: 100%; height: auto; margin: 3rem 0;">
+    <source src="your-video.mp4" type="video/mp4" />
+    your browser does not support the video tag.
   </video>
 
   <a href="/contact.html" class="reach-out-btn">reach out</a>
@@ -16,4 +29,10 @@ title: home
   <footer>
     based in copenhagen – available wherever the train can take us
   </footer>
-</section>
+</main>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+  }
+</script>
