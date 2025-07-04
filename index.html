@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ecotone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      color: white;
+      font-family: 'Goudy Bookletter 1911', serif;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    /* === Navigation === */
+    .menu-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .wave {
+      width: 30px;
+      height: 12px;
+      margin: 6px 0;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg"><path d="M0,10 Q25,0 50,10 T100,10" fill="none" stroke="white" stroke-width="4"/></svg>') no-repeat center;
+      background-size: contain;
+    }
+
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      right: -220px;
+      height: 100%;
+      width: 200px;
+      background-color: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: right 0.3s ease;
+      z-index: 1000;
+    }
+
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      margin: 20px;
+      font-size: 1.2em;
+      text-transform: lowercase;
+    }
+
+    .nav-menu.open {
+      right: 0;
+    }
+
+    /* === Logo Animation === */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5em;
+      color: white;
+      height: 100px;
+      margin-top: 40px;
+    }
+
+    .bracket {
+      display: inline-block;
+      opacity: 0;
+    }
+
+    .logo-text {
+      opacity: 0;
+      display: inline-block;
+      transform: translateY(20px);
+    }
+
+    .animate .left {
+      animation: slideLeft 1s ease forwards;
+    }
+
+    .animate .right {
+      animation: slideRight 1s ease forwards;
+    }
+
+    .animate .logo-text {
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.6s;
+    }
+
+    @keyframes slideLeft {
+      from { transform: translateX(50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideRight {
+      from { transform: translateX(-50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .motto {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      margin-top: 50px;
+      padding: 30px 30px;
+      border: 0px solid white;
+      background-color: transparent;
+      color: white;
+      text-decoration: none;
+      font-size: 1em;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background-color: white;
+      color: black;
+    }
+
+    .spacer {
+      height: 120px;
+    }
+
+    footer {
+      font-size: 0.9em;
+      margin-bottom: 30px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hamburger -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div class="wave"></div>
+    <div class="wave"></div>
+  </div>
+
+  <!-- Foldout Menu -->
+  <div class="nav-menu" id="navMenu">
+    <a href="index.html">home</a>
+    <a href="contact.html">contact</a>
+    <a href="about.html">about us</a>
+  </div>
+
+  <!-- Animated Logo -->
+  <div class="logo-container" id="logo">
+    <span class="bracket left">[</span>
+    <span class="logo-text">ecotone</span>
+    <span class="bracket right">]</span>
+  </div>
+
+  <div class="motto">Visuals for visionaries</div>
+
+  <a href="contact.html" class="button">reach out</a>
+
+  <div class="spacer"></div>
+
+  <footer>
+    based in Copenhagen – available wherever the train can take us
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      menu.classList.toggle('open');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const logo = document.getElementById('logo');
+
+      if (!sessionStorage.getItem('logoAnimated')) {
+        logo.classList.add('animate');
+        sessionStorage.setItem('logoAnimated', 'true');
+      } else {
+        logo.querySelector('.bracket.left').style.opacity = 1;
+        logo.querySelector('.bracket.right').style.opacity = 1;
+        logo.querySelector('.logo-text').style.opacity = 1;
+        logo.querySelector('.logo-text').style.transform = 'translateY(0)';
+      }
+    });
+  </script>
+</body>
+</html>
