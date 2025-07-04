@@ -15,7 +15,7 @@
       overflow-x: hidden;
     }
 
-    /* === Navigation === */
+    /* Navigation */
     .menu-toggle {
       position: absolute;
       top: 20px;
@@ -59,7 +59,7 @@
       right: 0;
     }
 
-    /* === Logo Animation === */
+    /* Logo Animation */
     .logo-container {
       display: flex;
       align-items: center;
@@ -111,6 +111,54 @@
     .spacer {
       height: 120px;
     }
+
+    main {
+      margin: 40px auto;
+      max-width: 600px;
+      padding: 0 20px;
+    }
+
+    .contact-info {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+
+    .follow-us {
+      margin-top: 40px;
+      font-size: 1em;
+      letter-spacing: 1px;
+    }
+
+    .social-links {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .social-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-links {
+      margin-top: 40px;
+      font-size: 1em;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -137,6 +185,30 @@
 
   <div class="spacer"></div>
 
+  <main>
+    <p>we look forward to hearing from you.</p>
+
+    <div class="contact-info">
+      📞 +45 27 59 13 84
+    </div>
+
+    <div class="contact-info">
+      ✉️ contact@ecotone.dk
+    </div>
+
+    <div class="follow-us">
+      follow us
+      <div class="social-links">
+        <a href="https://linkedin.com/ecotone" target="_blank">linkedin.com/ecotone</a>
+        <a href="https://instagram.com/ecotone_film" target="_blank">instagram.com/ecotone_film</a>
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">← return to main page</a>
+    </div>
+  </main>
+
   <script>
     function toggleMenu() {
       const menu = document.getElementById('navMenu');
@@ -157,33 +229,5 @@
       }
     });
   </script>
-</body>
-</html>
-
-<main>
-  <p>we look forward to hearing from you.</p>
-
-  <div class="contact-info">
-    <i>📞</i> +45 27 59 13 84
-  </div>
-
-  <div class="contact-info">
-    <i>✉️</i> contact@ecotone.dk
-  </div>
-
-  <div class="follow-us">
-  </div>
-    follow us
-    <div class="social-links">
-      <a href="https://linkedin.com/ecotone" target="_blank">linkedin.com/ecotone</a>
-      <a href="https://instagram.com/ecotone_film" target="_blank">instagram: ecotone_film</a>
-    </div>
-  </div>
-
-  <div class="nav-links">
-    <a href="index.html">← return to main page</a>
-  </div>
-</main>
-
 </body>
 </html>
