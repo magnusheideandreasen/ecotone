@@ -2,64 +2,133 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact - ecotone</title>
-  <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet" />
   <style>
     body {
+      margin: 0;
       background-color: black;
       color: white;
       font-family: 'Goudy Bookletter 1911', serif;
+      padding: 40px 20px;
+      text-align: center;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
-      text-align: center;
-      margin: 0;
     }
 
-    .logo {
+    /* Logo persistent at top left */
+    .logo-container {
+      position: fixed;
+      top: 20px;
+      left: 20px;
       font-size: 2em;
-      margin-top: 20px;
+      color: white;
+      user-select: none;
     }
 
-    h2 {
-      font-weight: 300;
+    h1 {
+      font-weight: normal;
       text-transform: lowercase;
-      font-size: 1.5em;
-      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.3em;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      line-height: 1.6em;
     }
 
     .contact-info {
-      font-family: 'Roboto', sans-serif;
-      font-size: 1.2em;
-      margin-top: 30px;
-      line-height: 1.8em;
+      font-size: 1.4em;
+      margin: 20px 0;
+      font-weight: 600;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
 
-    .back-link {
-      margin-top: 100px;
+    .contact-info svg {
+      fill: white;
+      width: 20px;
+      height: 20px;
+    }
+
+    .nav-links {
+      margin-top: 60px;
+    }
+    .nav-links a {
       color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      text-transform: lowercase;
+    }
+    .nav-links a:hover {
       text-decoration: underline;
     }
 
-    .icon {
+    .follow-us {
+      margin-top: 50px;
+      font-size: 1.2em;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .social-links {
+      margin-top: 15px;
+    }
+
+    .social-links a {
       color: white;
-      margin-right: 8px;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 600;
+      font-size: 1.1em;
+    }
+    .social-links a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="logo">[ecotone]</div>
 
-  <h2>Let us know how we can help you.</h2>
+  <div class="logo-container">[ecotone]</div>
+
+  <h1>contact</h1>
+
+  <p>Let us know how we can help you.</p>
 
   <div class="contact-info">
-    <div><span class="icon">📞</span>+45 27 59 13 84</div>
-    <div><span class="icon">✉️</span>contact@ecotone.dk</div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.36 11.36 0 003.55.57 1 1 0 011 1v3.4a1 1 0 01-1 1A16 16 0 013 5a1 1 0 011-1h3.4a1 1 0 011 1 11.36 11.36 0 00.57 3.55 1 1 0 01-.35 1.11z"/>
+    </svg>
+    +45 27 59 13 84
   </div>
 
-  <a href="index.html" class="back-link">← back to main page</a>
+  <div class="contact-info" style="margin-top: 15px;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+      <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2l-8 5-8-5h16zm-16 12V8l8 5 8-5v10H4z"/>
+    </svg>
+    contact@ecotone.dk
+  </div>
+
+  <div class="follow-us">
+    <p>follow us</p>
+    <div class="social-links">
+      <a href="https://linkedin.com/ecotone" target="_blank" rel="noopener">linkedin</a> | 
+      <a href="https://instagram.com/ecotone_film" target="_blank" rel="noopener">instagram</a>
+    </div>
+  </div>
+
+  <div class="nav-links">
+    <a href="index.html">return to main page</a>
+  </div>
+
 </body>
 </html>
