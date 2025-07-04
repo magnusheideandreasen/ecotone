@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us - ecotone</title>
-  <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet">
+  <title>Contact - ecotone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
       background-color: black;
@@ -16,17 +16,26 @@
       justify-content: center;
       height: 100vh;
       text-align: center;
+      margin: 0;
+    }
+
+    .logo {
+      font-size: 2em;
+      margin-top: 20px;
     }
 
     h2 {
       font-weight: 300;
       text-transform: lowercase;
       font-size: 1.5em;
+      margin-top: 40px;
     }
 
-    .phone {
-      margin-top: 20px;
+    .contact-info {
+      font-family: 'Roboto', sans-serif;
       font-size: 1.2em;
+      margin-top: 30px;
+      line-height: 1.8em;
     }
 
     .back-link {
@@ -34,11 +43,23 @@
       color: white;
       text-decoration: underline;
     }
+
+    .icon {
+      color: white;
+      margin-right: 8px;
+    }
   </style>
 </head>
 <body>
+  <div class="logo">[ecotone]</div>
+
   <h2>Let us know how we can help you.</h2>
-  <div class="phone">📞 +45 27 59 13 84</div>
+
+  <div class="contact-info">
+    <div><span class="icon">📞</span>+45 27 59 13 84</div>
+    <div><span class="icon">✉️</span>contact@ecotone.dk</div>
+  </div>
+
   <a href="index.html" class="back-link">← back to main page</a>
 </body>
 </html>
