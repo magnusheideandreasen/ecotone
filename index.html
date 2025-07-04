@@ -2,54 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ecotone Video Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ecotone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet">
   <style>
-    @font-face {
-      font-family: 'Goudy Old Style';
-      src: local('Goudy Old Style'), local('GoudyOldStyle'),
-           url('https://fonts.cdnfonts.com/s/11752/GoudyOldStyle.woff') format('woff');
-    }
     body {
-      background-color: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+      font-family: 'Goudy Bookletter 1911', serif;
       margin: 0;
-      padding: 40px 20px;
-      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: space-between;
+      height: 100vh;
+      text-align: center;
     }
+
     h1 {
-      font-family: 'Goudy Old Style', serif;
-      font-size: 4rem;
-      margin: 0;
+      font-weight: 300;
+      text-transform: lowercase;
+      margin-top: 50px;
     }
+
     .motto {
-      font-style: italic;
-      font-size: 1.5rem;
-      margin-top: 8px;
-      margin-bottom: 40px;
-      color: #ccc;
+      font-size: 1.2em;
+      margin-bottom: 30px;
     }
+
     video {
-      max-width: 90vw;
-      height: auto;
-      border: 2px solid #fff;
-      border-radius: 6px;
-      box-shadow: 0 0 15px #333;
-      outline: none;
+      width: 80%;
+      max-width: 800px;
+      border: 2px solid white;
+    }
+
+    .button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: 1px solid white;
+      background-color: transparent;
+      color: white;
+      text-decoration: none;
+      font-size: 1em;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background-color: white;
+      color: black;
+    }
+
+    footer {
+      font-size: 0.9em;
+      margin-bottom: 20px;
+      opacity: 0.8;
     }
   </style>
 </head>
 <body>
   <h1>ecotone</h1>
-  <div class="motto">visuals for visionaries</div>
+  <div class="motto">Visuals for visionaries</div>
 
   <video controls>
-    <source src="sample-video.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
+    <source src="your-video-file.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
   </video>
+
+  <a href="contact.html" class="button">reach out</a>
+
+  <footer>
+    based in Copenhagen – available wherever the train can take us
+  </footer>
 </body>
 </html>
