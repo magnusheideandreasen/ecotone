@@ -78,44 +78,44 @@
     .logo-text {
       opacity: 0;
       display: inline-block;
-      transform: translateY(20px);
     }
 
     .animate .left {
-      animation: slideLeft 1s ease forwards;
+      animation: expandLeft 0.6s ease forwards;
     }
 
     .animate .right {
-      animation: slideRight 1s ease forwards;
+      animation: expandRight 0.6s ease forwards;
     }
 
     .animate .logo-text {
-      animation: fadeInUp 1s ease forwards;
-      animation-delay: 0.6s;
+      animation: fadeInText 0.6s ease forwards;
+      animation-delay: 0.4s;
     }
 
-    @keyframes slideLeft {
+    @keyframes expandLeft {
       from { transform: translateX(50px); opacity: 0; }
       to { transform: translateX(0); opacity: 1; }
     }
 
-    @keyframes slideRight {
+    @keyframes expandRight {
       from { transform: translateX(-50px); opacity: 0; }
       to { transform: translateX(0); opacity: 1; }
     }
 
-    @keyframes fadeInUp {
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes fadeInText {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .motto {
       font-size: 1.2em;
-      margin-top: 30px; /* Added spacing between logo and motto */
-      margin-bottom: 30px;
+      margin-top: 10px;   /* Reduced space after logo */
+      margin-bottom: 50px; /* Increased space before button */
     }
 
     .button {
-      margin-top: 30px;
+      margin-top: 0;
       padding: 30px 30px;
       border: 0px solid white;
       background-color: transparent;
