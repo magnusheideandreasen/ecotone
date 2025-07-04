@@ -3,10 +3,23 @@ layout: default
 title: contact
 ---
 
-<main style="max-width: 700px; margin: 4rem auto; text-align: center;">
+<header>
+  <div class="logo">[ecotone]</div>
+  <div class="burger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+  </div>
+  <nav class="nav" id="menu">
+    <a href="/">home</a>
+    <a href="/about.html">about us</a>
+    <a href="/contact.html">contact</a>
+  </nav>
+</header>
+
+<main style="max-width: 700px; margin: 4rem auto; text-align: center; padding: 0 1rem;">
   <p class="tagline">let us know how we can help you</p>
 
-  <div class="contact-info">
+  <div class="contact-info" style="margin-top: 2rem;">
     <div class="contact-phone">
       <span>📞</span> +45 27 59 13 84
     </div>
@@ -14,8 +27,8 @@ title: contact
 
     <div style="margin-top: 2rem;">
       <p>follow us:</p>
-      <p><a href="https://linkedin.com/ecotone" target="_blank">linkedin.com/ecotone</a></p>
-      <p><a href="https://instagram.com/ecotone_film" target="_blank">instagram.com/ecotone_film</a></p>
+      <p><a href="https://linkedin.com/ecotone" target="_blank" rel="noopener">linkedin.com/ecotone</a></p>
+      <p><a href="https://instagram.com/ecotone_film" target="_blank" rel="noopener">instagram.com/ecotone_film</a></p>
     </div>
 
     <div style="margin-top: 3rem;">
@@ -23,3 +36,9 @@ title: contact
     </div>
   </div>
 </main>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+  }
+</script>
