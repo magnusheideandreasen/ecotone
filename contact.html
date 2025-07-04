@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>contact - ecotone</title>
+  <title>contact us - ecotone</title>
   <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -12,16 +12,9 @@
       color: white;
       font-family: 'Goudy Bookletter 1911', serif;
       padding: 20px;
-      padding-top: 60px; /* for fixed header */
-      text-align: center;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
       box-sizing: border-box;
     }
 
-    /* Header/Nav styles */
     header {
       position: fixed;
       top: 0;
@@ -32,60 +25,59 @@
       align-items: center;
       justify-content: space-between;
       z-index: 999;
-      box-sizing: border-box;
     }
+
     .logo-container {
-      font-family: 'Goudy Bookletter 1911', serif;
-      font-size: 1.8em;
+      font-size: 1.6em;
       color: white;
-      user-select: none;
       text-transform: lowercase;
     }
+
     .tagline {
-      font-family: 'Goudy Bookletter 1911', serif;
-      color: white;
-      font-size: 1em;
-      margin-left: 20px;
+      font-size: 0.9em;
+      margin-left: 15px;
       text-transform: lowercase;
       flex-grow: 1;
       text-align: left;
     }
+
     nav {
       position: relative;
     }
+
     #menu-toggle {
       display: none;
     }
+
     .menu-icon {
       font-size: 2em;
       color: white;
       cursor: pointer;
-      user-select: none;
       display: none;
     }
+
     ul.menu {
       list-style: none;
       display: flex;
       margin: 0;
       padding: 0;
     }
+
     ul.menu li {
       margin-left: 20px;
     }
+
     ul.menu li a {
       text-decoration: none;
       color: white;
-      font-family: 'Goudy Bookletter 1911', serif;
-      font-size: 1em;
       text-transform: lowercase;
     }
-    ul.menu li a:hover {
-      text-decoration: underline;
-    }
+
     @media (max-width: 600px) {
       .menu-icon {
         display: block;
       }
+
       ul.menu {
         display: none;
         flex-direction: column;
@@ -97,78 +89,110 @@
         border: 1px solid white;
         border-radius: 4px;
       }
+
       ul.menu li {
         margin: 10px 0;
         text-align: right;
         margin-left: 0;
         padding-right: 15px;
       }
+
       #menu-toggle:checked + .menu-icon + ul.menu {
         display: flex;
       }
     }
 
+    main {
+      margin-top: 100px;
+      text-align: center;
+    }
+
     h1 {
-      font-weight: normal;
+      font-size: 1.5em;
       text-transform: lowercase;
       margin-bottom: 20px;
     }
 
-    p {
-      font-size: 1.3em;
-      max-width: 600px;
-      margin: 0 auto 30px;
-      line-height: 1.6em;
-    }
-
     .contact-info {
-      font-size: 1.4em;
-      margin: 20px 0;
-      font-weight: 600;
-      letter-spacing: 1px;
+      font-size: 1.2em;
+      margin: 10px 0;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       gap: 10px;
     }
 
-    .contact-info svg {
-      fill: white;
-      width: 20px;
-      height: 20px;
+    .contact-info i {
+      color: white;
     }
 
     .follow-us {
-      margin-top: 50px;
-      font-size: 1.2em;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-top: 30px;
+      font-size: 1em;
       text-transform: lowercase;
     }
 
     .social-links {
-      margin-top: 15px;
+      margin-top: 10px;
     }
 
     .social-links a {
       color: white;
-      text-decoration: none;
-      margin: 0 12px;
-      font-weight: 600;
-      font-size: 1.1em;
-      text-transform: lowercase;
-    }
-    .social-links a:hover {
+      display: block;
+      margin: 5px 0;
       text-decoration: underline;
     }
 
     .nav-links {
-      margin-top: 70px;
-      text-transform:
-      lowercase;
+      margin-top: 50px;
     }
+
     .nav-links a {
       color: white;
       text-decoration: underline;
     }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-container">[ecotone]</div>
+  <div class="tagline">visuals for visionaries</div>
+  <nav>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <ul class="menu">
+      <li><a href="index.html">home</a></li>
+      <li><a href="contact.html">contact</a></li>
+      <li><a href="about.html">about us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <h1>contact us</h1>
+  <p>let us know how we can help you.</p>
+
+  <div class="contact-info">
+    <i>📞</i> +45 27 59 13 84
+  </div>
+
+  <div class="contact-info">
+    <i>✉️</i> contact@ecotone.dk
+  </div>
+
+  <div class="follow-us">
+    follow us
+    <div class="social-links">
+      <a href="https://linkedin.com/ecotone" target="_blank">linkedin.com/ecotone</a>
+      <a href="https://instagram.com/ecotone_film" target="_blank">instagram: ecotone_film</a>
+    </div>
+  </div>
+
+  <div class="nav-links">
+    <a href="index.html">← return to main page</a>
+  </div>
+</main>
+
+</body>
+</html>
