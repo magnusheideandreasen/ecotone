@@ -1,0 +1,162 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Goudy Old Style, serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: relative;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: Goudy Old Style, serif;
+  font-size: 2rem;
+  font-weight: normal;
+  text-transform: lowercase;
+  color: white;
+  animation: fadeIn 2s ease-in-out 0.5s 1 forwards;
+  opacity: 0;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  text-transform: lowercase;
+  margin: 1rem 0;
+  text-align: center;
+  color: #aaa;
+}
+
+/* Animation for logo on page load */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* --- Burger Menu --- */
+
+.burger {
+  width: 25px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+}
+
+.burger div {
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.nav {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background: #111;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.nav.active {
+  display: flex;
+}
+
+.nav a {
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #333;
+}
+
+/* --- Main Button --- */
+
+.reach-out-btn {
+  background: none;
+  border: 2px solid white;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  color: white;
+  margin: 2rem auto;
+  display: block;
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 4rem;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Contact Page Styling */
+
+.contact-info {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.contact-info a {
+  font-weight: bold;
+  display: inline-block;
+  margin: 0.25rem;
+}
+
+.contact-phone {
+  font-size: 1.4rem;
+  color: white;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Media Queries for Mobile */
+
+@media (max-width: 768px) {
+  .reach-out-btn {
+    width: 80%;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .contact-phone {
+    font-size: 1.2rem;
+  }
+}
