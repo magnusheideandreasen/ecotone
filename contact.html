@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact - ecotone</title>
+  <title>contact - ecotone</title>
   <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -11,22 +11,101 @@
       background-color: black;
       color: white;
       font-family: 'Goudy Bookletter 1911', serif;
-      padding: 40px 20px;
+      padding: 20px;
+      padding-top: 60px; /* for fixed header */
       text-align: center;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
+      box-sizing: border-box;
     }
 
-    /* Logo persistent at top left */
-    .logo-container {
+    /* Header/Nav styles */
+    header {
       position: fixed;
-      top: 20px;
-      left: 20px;
-      font-size: 2em;
+      top: 0;
+      width: 100%;
+      background: black;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 999;
+      box-sizing: border-box;
+    }
+    .logo-container {
+      font-family: 'Goudy Bookletter 1911', serif;
+      font-size: 1.8em;
       color: white;
       user-select: none;
+      text-transform: lowercase;
+    }
+    .tagline {
+      font-family: 'Goudy Bookletter 1911', serif;
+      color: white;
+      font-size: 1em;
+      margin-left: 20px;
+      text-transform: lowercase;
+      flex-grow: 1;
+      text-align: left;
+    }
+    nav {
+      position: relative;
+    }
+    #menu-toggle {
+      display: none;
+    }
+    .menu-icon {
+      font-size: 2em;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      display: none;
+    }
+    ul.menu {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    ul.menu li {
+      margin-left: 20px;
+    }
+    ul.menu li a {
+      text-decoration: none;
+      color: white;
+      font-family: 'Goudy Bookletter 1911', serif;
+      font-size: 1em;
+      text-transform: lowercase;
+    }
+    ul.menu li a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .menu-icon {
+        display: block;
+      }
+      ul.menu {
+        display: none;
+        flex-direction: column;
+        background: black;
+        position: absolute;
+        right: 0;
+        top: 40px;
+        width: 150px;
+        border: 1px solid white;
+        border-radius: 4px;
+      }
+      ul.menu li {
+        margin: 10px 0;
+        text-align: right;
+        margin-left: 0;
+        padding-right: 15px;
+      }
+      #menu-toggle:checked + .menu-icon + ul.menu {
+        display: flex;
+      }
     }
 
     h1 {
@@ -59,25 +138,13 @@
       height: 20px;
     }
 
-    .nav-links {
-      margin-top: 60px;
-    }
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.1em;
-      text-transform: lowercase;
-    }
-    .nav-links a:hover {
-      text-decoration: underline;
-    }
-
     .follow-us {
       margin-top: 50px;
       font-size: 1.2em;
       max-width: 400px;
       margin-left: auto;
       margin-right: auto;
+      text-transform: lowercase;
     }
 
     .social-links {
@@ -90,45 +157,12 @@
       margin: 0 12px;
       font-weight: 600;
       font-size: 1.1em;
+      text-transform: lowercase;
     }
     .social-links a:hover {
       text-decoration: underline;
     }
-  </style>
-</head>
-<body>
 
-  <div class="logo-container">[ecotone]</div>
-
-  <h1>contact</h1>
-
-  <p>Let us know how we can help you.</p>
-
-  <div class="contact-info">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.36 11.36 0 003.55.57 1 1 0 011 1v3.4a1 1 0 01-1 1A16 16 0 013 5a1 1 0 011-1h3.4a1 1 0 011 1 11.36 11.36 0 00.57 3.55 1 1 0 01-.35 1.11z"/>
-    </svg>
-    +45 27 59 13 84
-  </div>
-
-  <div class="contact-info" style="margin-top: 15px;">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
-      <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2l-8 5-8-5h16zm-16 12V8l8 5 8-5v10H4z"/>
-    </svg>
-    contact@ecotone.dk
-  </div>
-
-  <div class="follow-us">
-    <p>follow us</p>
-    <div class="social-links">
-      <a href="https://linkedin.com/ecotone" target="_blank" rel="noopener">linkedin</a> | 
-      <a href="https://instagram.com/ecotone_film" target="_blank" rel="noopener">instagram</a>
-    </div>
-  </div>
-
-  <div class="nav-links">
-    <a href="index.html">return to main page</a>
-  </div>
-
-</body>
-</html>
+    .nav-links {
+      margin-top: 70px;
+      text-transform:
