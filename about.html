@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ecotone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>about us - ecotone</title>
   <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -10,11 +11,14 @@
       background-color: black;
       color: white;
       font-family: 'Goudy Bookletter 1911', serif;
+      padding: 20px;
+      padding-top: 60px;
       text-align: center;
-      overflow-x: hidden;
+      min-height: 100vh;
+      box-sizing: border-box;
     }
 
-    /* === Navigation === */
+     /* === Navigation === */
     .menu-toggle {
       position: absolute;
       top: 20px;
@@ -57,125 +61,90 @@
     .nav-menu.open {
       right: 0;
     }
-
-    /* === Logo Animation === */
     .logo-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5em;
+      font-family: 'Goudy Bookletter 1911', serif;
+      font-size: 1.8em;
       color: white;
-      height: 100px;
-      margin-top: 40px;
+      user-select: none;
+      text-transform: lowercase;
     }
 
-    .bracket {
-      display: inline-block;
-      opacity: 0;
+    .tagline {
+      font-family: 'Goudy Bookletter 1911', serif;
+      color: white;
+      font-size: 1em;
+      margin-left: 20px;
+      text-transform: lowercase;
+      flex-grow: 1;
+      text-align: left;
     }
 
-    .logo-text {
-      opacity: 0;
-      display: inline-block;
-      transform: translateY(20px);
+    nav {
+      position: relative;
     }
 
-    .animate .left {
-      animation: slideLeft 1s ease forwards;
+    #menu-toggle {
+      display: none;
     }
 
-    .animate .right {
-      animation: slideRight 1s ease forwards;
+    .menu-icon {
+      font-size: 2em;
+      color: white;
+      cursor: pointer;
+      display: none;
     }
 
-    .animate .logo-text {
-      animation: fadeInUp 1s ease forwards;
-      animation-delay: 0.6s;
+    ul.menu {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
     }
 
-    @keyframes slideLeft {
-      from { transform: translateX(50px); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
+    ul.menu li {
+      margin-left: 20px;
     }
 
-    @keyframes slideRight {
-      from { transform: translateX(-50px); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
+    ul.menu li a {
+      text-decoration: none;
+      color: white;
+      font-family: 'Goudy Bookletter 1911', serif;
+      font-size: 1em;
+      text-transform: lowercase;
     }
 
-    @keyframes fadeInUp {
-      to { opacity: 1; transform: translateY(0); }
+    ul.menu li a:hover {
+      text-decoration: underline;
     }
 
-    .motto {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-    }
-
-    .spacer {
-      height: 120px;
-    }
-
-    footer {
-      font-size: 0.9em;
-      margin-bottom: 30px;
-      opacity: 0.8;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Hamburger -->
-  <div class="menu-toggle" onclick="toggleMenu()">
-    <div class="wave"></div>
-    <div class="wave"></div>
-  </div>
-
-  <!-- Foldout Menu -->
-  <div class="nav-menu" id="navMenu">
-    <a href="index.html">home</a>
-    <a href="contact.html">contact</a>
-    <a href="about.html">about us</a>
-  </div>
-
-  <!-- Animated Logo -->
-  <div class="logo-container" id="logo">
-    <span class="bracket left">[</span>
-    <span class="logo-text">ecotone</span>
-    <span class="bracket right">]</span>
-  </div>
-
-  <div class="motto">Visuals for visionaries</div>
-
-  <a href="contact.html" class="button">reach out</a>
-
-  <div class="spacer"></div>
-
-  <footer>
-    based in Copenhagen – available wherever the train can take us
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('navMenu');
-      menu.classList.toggle('open');
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      const logo = document.getElementById('logo');
-
-      if (!sessionStorage.getItem('logoAnimated')) {
-        logo.classList.add('animate');
-        sessionStorage.setItem('logoAnimated', 'true');
-      } else {
-        logo.querySelector('.bracket.left').style.opacity = 1;
-        logo.querySelector('.bracket.right').style.opacity = 1;
-        logo.querySelector('.logo-text').style.opacity = 1;
-        logo.querySelector('.logo-text').style.transform = 'translateY(0)';
+    @media (max-width: 600px) {
+      .menu-icon {
+        display: block;
       }
-    });
-  </script>
-</body>
+
+      ul.menu {
+        display: none;
+        flex-direction: column;
+        background: black;
+        position: absolute;
+        right: 0;
+        top: 40px;
+        width: 150px;
+        border: 1px solid white;
+        border-radius: 4px;
+      }
+
+      ul.menu li {
+        margin: 10px 0;
+        text-align: right;
+        margin-left: 0;
+        padding-right: 15px;
+      }
+
+      #menu-toggle:checked + .menu-icon + ul.menu {
+        display: flex;
+      }
+    }
 
     main {
       margin-top: 50px;
@@ -192,5 +161,33 @@
 </head>
 <body>
 
+<header>
+  <div class="logo-container">[ecotone]</div>
+  <div class="tagline">visuals for visionaries</div>
+  <nav>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <ul class="menu">
+      <li><a href="index.html">home</a></li>
+      <li><a href="contact.html">contact</a></li>
+      <li><a href="about.html">about us</a></li>
+    </ul>
+  </nav>
+</header>
 
+<main>
+      <p>we support forward-thinking researchers and blue-green ngos in making their ideas and actions impactful</p>
+    <div class="projects">
+      <h2>selected recent projects</h2>
+      <ul>
+        <li>Autonomous mapping of corals (Indonesia, Sensemakers ApS - ongoing)</li>
+        <li>Water clarity measures through citizen science (Bornholm, Ivandet)</li>
+        <li>Aftermaths of an earthquake (Himalaya, CICED)</li>
+        <li>High-Arctic research (Svalbard, the University Centre in Svalbard)</li>
+        <li>Alpine ecology methods (Lapland, Lund University)</li>
+      </ul>
+    </div>
+</main>
+
+</body>
 </html>
