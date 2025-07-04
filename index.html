@@ -33,19 +33,20 @@
     }
 
     .nav-menu {
-      position: fixed;
-      top: 0;
-      right: -220px;
-      height: 100%;
-      width: 200px;
-      background-color: #111;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transition: right 0.3s ease;
-      z-index: 1000;
-    }
+  position: fixed;
+  top: 0;
+  right: -220px;
+  height: 100%;
+  width: 200px;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* align links to top */
+  padding-top: 120px; /* push links down, adjust this to align with logo */
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
 
     .nav-menu a {
       color: white;
@@ -61,14 +62,16 @@
 
     /* === Logo Animation === */
     .logo-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5em;
-      color: white;
-      height: 100px;
-      margin-top: 40px;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5em;
+  color: white;
+  height: 100px;
+  margin-top: 40px;
+  margin-bottom: 0; /* remove bottom margin */
+}
+
 
     .bracket {
       display: inline-block;
